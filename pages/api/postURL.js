@@ -1,4 +1,4 @@
-import connectDB from "../lib/connectDB";
+import connectDB from "../../lib/connectDB";
 import Url from "../../models/UrlSchema";
 
 export default async function handler(req, res) {
