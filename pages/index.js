@@ -25,7 +25,6 @@ export default function Home() {
         const element = reg[a];
         randomVal += element;
       }
-      const ourUrl = `${window.location.href}/url/${randomVal}`;
       setClientUrl(randomVal);
       const body = { givenUrl, randomVal };
       await axios
