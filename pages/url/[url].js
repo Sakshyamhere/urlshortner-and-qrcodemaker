@@ -18,7 +18,7 @@ function Urlfromslug() {
   const getURL = async () => {
     try {
       const getdata = await axios.get(
-        `http://localhost:3000/api/getURL?url=${router.query.url}`
+        `/api/getURL?url=${router.query.url}`
       );
       const urldata = await getdata.data;
       setRedirect(await urldata.map((items) => items.url));

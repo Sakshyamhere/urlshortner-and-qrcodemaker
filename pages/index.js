@@ -25,11 +25,11 @@ export default function Home() {
         const element = reg[a];
         randomVal += element;
       }
-      const ourUrl = `http://localhost:3000/url/${randomVal}`;
-      setClientUrl(ourUrl);
-      const body = { givenUrl, ourUrl };
+      const ourUrl = `${window.location.href}/url/${randomVal}`;
+      setClientUrl(randomVal);
+      const body = { givenUrl, randomVal };
       await axios
-        .post("http://localhost:3000/api/postURL", { body })
+        .post("/api/postURL", { body })
         .then((response) => setIsDone(true));
     } else {
       setUrlError(false);
@@ -127,8 +127,8 @@ export default function Home() {
               </div>
             ) : (
               <div>
-                <Link href={clientUrl} className="text-blue-700">
-                  {clientUrl}
+                <Link href={`/url/${clientUrl}`} className="text-blue-700">
+                {window.location.href}url/{clientUrl}
                 </Link>
               </div>
             )}

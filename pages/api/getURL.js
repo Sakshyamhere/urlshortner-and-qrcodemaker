@@ -4,7 +4,7 @@ import connectDB from "../lib/connectDB";
 export default async function handler(req, res) {
     connectDB()
   const queryUrl = req.query.url;
-  const ourUrl = `http://localhost:3000/url/${queryUrl}`;
+  const ourUrl = queryUrl;
   if (req.method === "GET") {
     try {
       const result = await Url.find({ ourUrl: ourUrl });

@@ -5,10 +5,10 @@ export default async function handler(req, res) {
   connectDB();
   if (req.method == "POST") {
     try {
-      const { givenUrl , ourUrl} = req.body.body;
+      const { givenUrl , randomVal} = req.body.body;
       const url = new Url({
         url: givenUrl,
-        ourUrl: ourUrl
+        ourUrl: randomVal
       });
       await url.save();
       res.status(200).json({ done: true, url: url });
